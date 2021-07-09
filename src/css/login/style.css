@@ -1,0 +1,129 @@
+:root {
+    --ligth-black: #333;
+    --pure-black: #000000;
+}
+
+body {
+    background-color: var(--pure-black);
+    color: #ffffff;
+}
+
+.principal {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    background-color: var(--ligth-black);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    animation: slidetop 1.5s;
+}
+
+@media screen and (max-width: 768px) {
+    .principal {
+        width: 300px;
+    }
+}
+
+.principal__head {
+    width: inherit;
+    height: 175px;
+    background-color: #009954;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principal__head--logo {
+    margin-top: 10px;
+    width: 90px;
+    height: 90px;
+}
+
+.principal__head--title {
+    margin-top: 0;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.principal__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principal__body--user {
+    width: 125px;
+    height: 125px;
+    margin-top: 40px;
+}
+
+.principal__body--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 525px;
+    width: 300px;
+}
+
+.principal__body--form__input {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 9px;
+    font-size: 20px;
+    animation: fadein 2.8s;
+}
+
+.principal__body--form__button {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    background-color: #009954;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.principal__body--form__error {
+    color: red;
+    font-size: 12px;
+}
+
+/*Animations*/
+
+@keyframes slidetop {
+    from {
+        top: -1000px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 0.35;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}

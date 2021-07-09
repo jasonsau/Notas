@@ -1,0 +1,171 @@
+body {
+    background-color: #eee;
+}
+.subtitle {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.container__form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.form__student {
+    margin-top: 40px;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.form__student--data {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.form__student--icon--plus {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.form__student--label {
+    width: 180px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.form__student--input {
+    height: 35px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.form__student--select {
+    width: 300px;
+    height: 35px;
+}
+
+.form__student--button {
+    width: 100%;
+    height: 50px;
+    background-color: #008854;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.container__encargado {
+    position: fixed;
+    background-color: #eee;
+    padding: 50px;
+    top: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    opacity: 1;
+    z-index: -1;
+}
+
+.form__student--table {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 500px;
+    height: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+.table__thead {
+    height: 30px;
+    background-color: #000000;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table__tbody--tr {
+    height: 30px;
+}
+.table__thead--th:nth-child(1) {
+    width: 10%;
+}
+.table__thead--th:nth-child(2) {
+    width: 40%;
+}
+.table__thead--th:nth-child(3) {
+    width: 40%;
+}
+.table__tbody--tr:nth-child(even) {
+    background-color: #fff;
+}
+.table__tbody--tr:nth-child(odd) {
+    background-color: #a2fac0;
+}
+
+.border-error {
+    border: 3px solid #ff0000;
+}
+
+.form__student--link {
+    cursor: pointer;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s;
+    z-index: 1;
+    opacity: 1;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+/*Animacions*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        scale: 1;
+    }
+    50% {
+        opacity: 0.5;
+        scale: 1.2;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        scale: 1;
+    }
+    to {
+        opacity: 0;
+        scale: 0;
+    }
+}
