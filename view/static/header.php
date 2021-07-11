@@ -21,10 +21,10 @@
                 src = "../../src/img/icon/home.svg"
             />
             <a 
-                href = "../auth/register.php" 
+                href = "../auth/Employee.php" 
                 class = "nav__vertical--button"
             >
-                Registro Usuario
+                Usuarios
             </a>
         </li>
         <li class = "nav__vertical--li">

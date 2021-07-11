@@ -1,135 +1,175 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>User</title>
-        <meta charset = "UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content = "IE = edge" />
-        <meta 
-        name = "viewport" 
-        content = "width = device-width, 
-        initial-scale = 1.0" />
-        <link rel = "stylesheet" href = "../../src/css/normalize/normalize.css" />
-        <link rel = "stylesheet" href = "../../src/css/register/styles.css" />
-        <link rel = "stylesheet" href = "../../src/css/header/style.css" />
-    </head>
-    <body>
+<?php
+require_once "../../Controller/WorkPositionController.php";
+
+$data = ShowWorkPosition();
+?>
 <?php require_once "../static/header.php" ?>
-        <div class = "container__register">
-            <h1 class = "title">Register New User</h1>
-            <form 
-                class = "container__form" 
-                method = "POST" 
-                action = "../../Controller/UserController.php" 
-                enctype = "multipart/form-data"
-            >
-                <input type = "hidden" name = "register" value = "register"/>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">Nombres</label>
-                    <span class = "container__form--icon">
-                        <img 
-                            src = "../../src/img/icon/person.svg" 
-                            alt = "Icon person" 
-                        />
-                    </span>
-                    <input
-                        class = "container__form--input"
-                        type = "text" 
-                        placeholder = "Nombres" 
-                        name = "first-name"
-                    />
-                </div>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">
-                        Apellidos
-                    </label>
-                    <span class = "container__form--icon">
-                        <img
-                            src = "../../src/img/icon/person.svg" 
-                            alt = "Icon person" 
-                        />
-                    </span>
-                    <input 
-                        class = "container__form--input" 
-                        type = "text" 
-                        placeholder = "Apellidos" 
-                        name = "last-name"
-                    />
-                </div>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">
-                        Nombre de Usuario
-                    </label>
-                    <span class = "container__form--icon">
-                        <img 
-                            src = "../../src/img/icon/person.svg" 
-                            alt = "Icon person" 
-                        />
-                    </span>
-                    <input 
-                        class = "container__form--input" 
-                        type = "text" placeholder = "Nombre de Usuario" 
-                        name = "username"
-                    />
-                </div>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">
-                        Password
-                    </label>
-                    <span class = "container__form--icon">
-                        <img 
-                            src = "../../src/img/icon/password.svg" 
-                            alt = "Icon password" 
-                        />
-                    </span>
-                    <input 
-                        class = "container__form--input" 
-                        type = "text" placeholder = "Password" 
-                        name = "password"
-                    />
-                </div>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">
-                        Email
-                    </label>
-                    <span class = "container__form--icon">
-                        <img 
-                            src = "../../src/img/icon/mail.svg" 
-                            alt = "Icon mail" 
-                        />
-                    </span>
-                    <input 
-                        class = "container__form--input" 
-                        type = "email" 
-                        placeholder = "Email" 
-                        name = "email"
-                    />
-                </div>
-                <div class = "container__form--data">
-                    <label class = "container__form--label">
-                        Tipo
-                    </label>
-                    <span class = "container__form--icon">
-                        <img 
-                            src = "../../src/img/icon/admin.svg" 
-                            alt = "Icon type" 
-                        />
-                    </span>
-                    <select 
-                        class = "container__form--select" 
-                        name = "is-super-user"
-                    >
-                        <option>--Seleccione--</option>
-                        <option value = "1">Admin</option>
-                        <option value = "0">User</option>
-                    </select>
-                </div>
-                <div class = "container__form--data">
-                    <button class = "container__form--button">
-                        Registrar
-                    </button>
-                </div>
-            </form>
+
+<div class = "container-modal" id = "container-modal-id">
+    <span 
+        class = "container-modal__span--close"
+        id = "container-modal-span-id"
+    >
+        <img src = "../../src/img/icon/close_white.svg" />
+    </span>
+    <h1 class = "title">Nuevo Empleado</h1>
+    <form 
+        class = "container-form" 
+        method = "POST" 
+        action = "../../Controller/UserController.php" 
+        enctype = "multipart/form-data"
+    >
+        <input type = "hidden" name = "register" value = "register"/>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-name">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">Nombres</label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/person.svg" 
+                    alt = "Icon person" 
+                />
+            </span>
+            <input
+                class = "container-form__input"
+                type = "text" 
+                placeholder = "Nombres de Empleado" 
+                name = "employee-name"
+            />
         </div>
-    </body>
-</html>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-last-name">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Apellidos
+            </label>
+            <span class = "container-form__icon">
+                <img
+                    src = "../../src/img/icon/person.svg" 
+                    alt = "Icon person" 
+                />
+            </span>
+            <input 
+                class = "container-form__input" 
+                type = "text" 
+                placeholder = "Apellidos de Empleado" 
+                name = "employee-last-name"
+            />
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-dui">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Dui
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/person.svg" 
+                    alt = "Icon person" 
+                />
+            </span>
+            <input 
+                class = "container-form__input" 
+                type = "text" placeholder = "Dui de Empleado" 
+                name = "employee-dui"
+            />
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-address">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Direccion
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/person.svg" 
+                    alt = "Icon person" 
+                />
+            </span>
+            <textarea 
+                rows = 3
+                class = "container-form__input--tex-area" 
+                type = "text" placeholder = "Direccion de Empleado" 
+                name = "employee-address"
+            ></textarea>
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-date">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Fecha de Nacimiento
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/date.svg" 
+                    alt = "Icon date" 
+                />
+            </span>
+            <input 
+                class = "container-form__input" 
+                type = "date" placeholder = "Password" 
+                name = "employee-date-birthday"
+            />
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-email">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Email
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/mail.svg" 
+                    alt = "Icon mail" 
+                />
+            </span>
+            <input 
+                class = "container-form__input" 
+                type = "email" 
+                placeholder = "Email" 
+                name = "employee-email"
+            />
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-position">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Tipo
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/admin.svg" 
+                    alt = "Icon type" 
+                />
+            </span>
+            <select 
+                class = "container-form__select" 
+                name = "work-position-id"
+            >
+                <option>--Seleccione--</option>
+                <?php foreach($data as $da) { ?>
+                    <option 
+                        value = "<?php echo $da['workPositionId'] ?>">
+                        <?php echo $da['workPositionName'] ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class = "container-form__data">
+            <button 
+                class = "container-form__button"
+                id = "register-employee"
+            >
+                Registrar
+            </button>
+        </div>
+    </form>
+</div>
 
