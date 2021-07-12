@@ -16,8 +16,8 @@ $data = ShowWorkPosition();
     <form 
         class = "container-form" 
         method = "POST" 
-        action = "../../Controller/UserController.php" 
-        enctype = "multipart/form-data"
+        name = "form-register-employee"
+        id = "form-register-employee-id"
     >
         <input type = "hidden" name = "register" value = "register"/>
         <div class = "container-form__data">
@@ -36,6 +36,7 @@ $data = ShowWorkPosition();
                 type = "text" 
                 placeholder = "Nombres de Empleado" 
                 name = "employee-name"
+                id = "employee-name-id"
             />
         </div>
         <div class = "container-form__data">
@@ -56,6 +57,7 @@ $data = ShowWorkPosition();
                 type = "text" 
                 placeholder = "Apellidos de Empleado" 
                 name = "employee-last-name"
+                id = "employee-last-name-id"
             />
         </div>
         <div class = "container-form__data">
@@ -75,6 +77,7 @@ $data = ShowWorkPosition();
                 class = "container-form__input" 
                 type = "text" placeholder = "Dui de Empleado" 
                 name = "employee-dui"
+                id = "employee-dui-id"
             />
         </div>
         <div class = "container-form__data">
@@ -95,6 +98,7 @@ $data = ShowWorkPosition();
                 class = "container-form__input--tex-area" 
                 type = "text" placeholder = "Direccion de Empleado" 
                 name = "employee-address"
+                id = "employee-address-id"
             ></textarea>
         </div>
         <div class = "container-form__data">
@@ -114,6 +118,7 @@ $data = ShowWorkPosition();
                 class = "container-form__input" 
                 type = "date" placeholder = "Password" 
                 name = "employee-date-birthday"
+                id = "employee-date-birthday-id"
             />
         </div>
         <div class = "container-form__data">
@@ -134,6 +139,28 @@ $data = ShowWorkPosition();
                 type = "email" 
                 placeholder = "Email" 
                 name = "employee-email"
+                id = "employee-email-id"
+            />
+        </div>
+        <div class = "container-form__data">
+            <div class = "container-form__error" id = "error-cellphone">
+                Esto es un error
+            </div>
+            <label class = "container-form__label">
+                Telefono
+            </label>
+            <span class = "container-form__icon">
+                <img 
+                    src = "../../src/img/icon/cell.svg" 
+                    alt = "Icon cellphone" 
+                />
+            </span>
+            <input 
+                class = "container-form__input" 
+                type = "text" 
+                placeholder = "Telefono" 
+                name = "employee-cellphone"
+                id = "employee-cellphone-id"
             />
         </div>
         <div class = "container-form__data">
@@ -151,7 +178,8 @@ $data = ShowWorkPosition();
             </span>
             <select 
                 class = "container-form__select" 
-                name = "work-position-id"
+                name = "work-position"
+                id = "work-position-id"
             >
                 <option>--Seleccione--</option>
                 <?php foreach($data as $da) { ?>
@@ -165,7 +193,7 @@ $data = ShowWorkPosition();
         <div class = "container-form__data">
             <button 
                 class = "container-form__button"
-                id = "register-employee"
+                id = "button-register-employee-id"
             >
                 Registrar
             </button>

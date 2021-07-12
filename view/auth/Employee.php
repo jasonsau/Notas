@@ -20,6 +20,7 @@
         rel="stylesheet" 
     />
     <link rel = "stylesheet" href = "../../src/css/register/styles.css" />
+    <link rel = "stylesheet" href = "../../src/css/alert/styles.css" />
 </head>
 
 <body>
@@ -28,6 +29,8 @@
     ?>
     <!-- Modal para el registro del Empleado-->
     <?php require_once "./register.php" ?>
+
+    <!-- Modal para el error-->
 
     <main class="main">
         <h2 class="main-title">Empleados</h2>
@@ -46,7 +49,7 @@
                     />
                     <button 
                         class = "main-form__button"
-                        id = "search-employee"
+                        id = "search-employee-id"
                     >
                         Buscar
                     </button>
@@ -60,6 +63,20 @@
             </form>
         </div>
         <div class="main-container">
+
+            <div class = "container-error" id = "container-error-id">
+                <h2 class = "container-error__title" id = "title-error-id">Register Encargado</h2>
+                <p class = "container-error__content" id = "content-error-id">Mensaje de Respuesta</p>
+                <button id = "button-alert" class = "container-error__button">OK</button>
+            </div>
+    
+            <div id = "container-delete-id" class = "container-delete">
+                <h2 class = "container-error-title" id = "title-delete">Desea eliminar el empleado</h2>
+                <p class = "container-error__content" id = "content-delete-id">Mensaje de Respuesta</p>
+                <button id = "button-delete" class = "container-error__button">Borrar</button>
+                <button id = "button-delete-cancel" class = "container-error__button">Cancelar</button>
+
+            </div>
             <table class="main-container__table">
                 <thead class="main-container__thead">
                     <th class="main-container__th">Num</th>
@@ -69,193 +86,7 @@
                     <th class="main-container__th">Cargo</th>
                     <th class="main-container__th">Opciones</th>
                 </thead>
-                <tbody>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            Maestro
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            Maestro
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            Secretario
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            Maestro
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            7533-0538
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class = "main-container__tr">
-                        <td class = "main-container__td">
-                            1
-                        </td>
-                        <td class = "main-container__td">
-                            05909622-2
-                        </td>
-                        <td class = "main-container__td">
-                            Jason Saul Martinez Argueta
-                        </td>
-                        <td class = "main-container__td">
-                            jason.guerra253@gmail.com
-                        </td>
-                        <td class = "main-container__td">
-                            7533-0538
-                        </td>
-                        <td class = "main-container__td">
-                            <span class = "main-container__span">
-                                <img 
-                                    class = "main-container__img"
-                                    src = "../../src/img/icon/edit_white.svg" 
-                                />
-                            </span>
-                            <span class = "main-container__span--alert">
-                                <img 
-                                    class = "main-container__img--alert"
-                                    src = "../../src/img/icon/delete_white.svg" 
-                                />
-                            </span>
-                        </td>
-                    </tr>
-                    </tr>
+                <tbody id = "main-container__tbody">
                 </tbody>
             </table>
         </div>

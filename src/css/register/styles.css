@@ -7,14 +7,14 @@ body {
     position: relative;
     background-color: #333;
     color: white;
-    font-family: 'Alegreya', serif;
+    font-family: "Alegreya", serif;
 }
 
 .title {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 5px;
-    font-family: 'Alegreya', serif;
+    font-family: "Alegreya", serif;
     font-size: 50px;
 }
 
@@ -27,8 +27,9 @@ body {
 }
 
 .container-modal {
+    border-radius: 10px;
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     background-color: #1c1b1b;
@@ -36,16 +37,17 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    display: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .container-modal__span--close {
     position: relative;
-    left: 49%;
+    left: 47%;
+    top: 5px;
     cursor: pointer;
 }
-
 
 @media screen and (max-width: 1400px) {
     .container-modal {
@@ -69,13 +71,26 @@ body {
     opacity: 0;
 }
 
+.show-error-block {
+    animation: showErrorBlock 0.3;
+    opacity: 1;
+}
+
+@keyframes showErrorBlock {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .container-form__error {
         font-size: 15px;
         height: 20px;
     }
 }
-
 
 .container-form__data {
     display: flex;
@@ -98,7 +113,7 @@ body {
     width: 235px;
     margin-right: 20px;
     height: 40px;
-    font-family: 'Alegreya';
+    font-family: "Alegreya";
     font-size: 20px;
 }
 
@@ -128,7 +143,8 @@ body {
     }
 }
 
-.container-form__input, .container-form__input--text-area {
+.container-form__input,
+.container-form__input--text-area {
     height: 40px;
     padding: 0;
     border: solid 1px #ccc;
@@ -137,7 +153,7 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
-    .container-form__input, 
+    .container-form__input,
     .container-form__input--text-area {
         height: 35px;
         font-size: 15px;
@@ -149,7 +165,7 @@ body {
 }
 
 .container-form__button {
-    font-family: 'Alegreya', serif;
+    font-family: "Alegreya", serif;
     position: relative;
     width: 80%;
     height: 40px;
@@ -172,7 +188,6 @@ body {
         margin: auto;
         margin-bottom: 20px;
         font-size: 25px;
-
     }
 }
 
@@ -188,27 +203,14 @@ body {
     }
 }
 
-.hidden-error {
-    animation: hiddenError 0.3s;
-    opacity: 1;
-}
-
 .show-modal {
     animation: showModal 0.5s;
     display: flex;
+    z-index: 1;
 }
 
 .hidden-modal {
-    animation: hiddenModal 100s;
-    display: none;
-}
-
-@keyframes hiddenError {
-    from {
-        opacity: 0;
-    } to {
-        opacity: 1;
-    }
+    animation: hiddenModal 0.5s;
 }
 
 @keyframes showModal {
@@ -229,14 +231,11 @@ body {
 @keyframes hiddenModal {
     0% {
         opacity: 1;
-        transform: scale(1);
     }
     50% {
         opacity: 0.5;
-        transform: scale(1.2);
     }
     100% {
         opacity: 0;
-        transform: scale(1);
     }
 }
